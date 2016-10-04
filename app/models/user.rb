@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     # email属性を小文字に変換してメールアドレスの一意性を保証
-    # before_save {self.email = email.downcase}
+    before_save {self.email = email.downcase}
     # name属性の存在性を検証
     validates :name, presence: true, length: {maximum: 50}
     # validates(:name, presence: true)
